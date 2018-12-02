@@ -6,4 +6,4 @@
 3. Set the rules' permissions: `sudo chmod 644 ~/Downloads/60-openocd.rules`
 4. Move the rules: `sudo mv ~/Downloads/60-openocd.rules /etc/udev/rules.d/`
 5. Add yourself to the plugdev group: `sudo usermod -a -G plugdev $USERNAME`
-6. Probably reboot. Just running `udevadm control --reload` might also work.
+6. Probably reboot. Just running `sudo udevadm control --reload` might also work.
