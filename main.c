@@ -13,12 +13,21 @@ static void delay(int n)
 
 int main(void)
 {
-    REG_PORT_DIR0 |= (1<<17);
+    REG_PORT_DIR1 |= (1<<30);
     while (1)
     {
-        REG_PORT_OUT0 &= ~(1<<17);
-        delay(500);
-        REG_PORT_OUT0 |= (1<<17);
-        delay(500);
+        REG_PORT_OUT1 &= ~(1<<30);
+        delay(100);
+        REG_PORT_OUT1 |= (1<<30);
+        delay(100);
+	REG_PORT_OUT1 &= ~(1<<30);
+        delay(100);
+        REG_PORT_OUT1 |= (1<<30);
+        delay(100);
+	REG_PORT_OUT1 &= ~(1<<30);
+        delay(100);
+        REG_PORT_OUT1 |= (1<<30);
+        delay(1000);
+
     }
 }
