@@ -8,11 +8,18 @@
 5. Add yourself to the plugdev group: `sudo usermod -a -G plugdev $USERNAME`
 6. Probably reboot. Just running `sudo udevadm control --reload` might also work.
 
-# Additional Requirements
+# Installing the Toolchain
 - Download the ARM GNU Toolchain from [here](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers) and puth the bin folder on your path.
-- Download ASF 3 from [here](https://www.microchip.com/mplab/avr-support/advanced-software-framework)(bottom of the page, ignore that it says Windows) and export a environment variable `ASF_ROOT` with the path to that (e.g. `export ASF_ROOT=~/Programs/xdk-asf-3.44.0/`)
 
-# Building and Deploying Code
+# Building and Deploying ASF4 (Atmel START)
+1. From within this directory, start `openocd`
+2. In a new terminal, cd into `BlinkyBlinkyASF4/gcc/`
+3. Run `make`
+4. Run `arm-none-eabi-gdb -iex "target extended-remote localhost:3333" AtmelStart.elf`
+5. At the `(gdb)` prompt run `load` to upload to the micro, `monitor reset halt` to reset the micro, and `c` to 'continue'.
+
+# Building and Deploying Manual ASF3
+1. - Download ASF 3 from [here](https://www.microchip.com/mplab/avr-support/advanced-software-framework)(bottom of the page, ignore that it says Windows) and export a environment variable `ASF_ROOT` with the path to that (e.g. `export ASF_ROOT=~/Programs/xdk-asf-3.44.0/`)
 1. From within this directory, start `openocd`
 2. In a new terminal, run `make debug`
 3. At the `(gdb)` prompt run `load` to upload to the micro, `monitor reset halt` to reset the micro, and `c` to 'continue'.

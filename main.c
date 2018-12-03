@@ -1,5 +1,7 @@
 #include <samd21.h>
+#include <delay.h>
 
+/*
 static void delay(int n)
 {
     int i;
@@ -10,24 +12,26 @@ static void delay(int n)
             __asm("nop");
     }
 }
+*/
 
 int main(void)
 {
+    delay_init();
     REG_PORT_DIR1 |= (1<<30);
     while (1)
     {
         REG_PORT_OUT1 &= ~(1<<30);
-        delay(100);
+        delay_ms(100);
         REG_PORT_OUT1 |= (1<<30);
-        delay(100);
+        delay_ms(100);
 	REG_PORT_OUT1 &= ~(1<<30);
-        delay(100);
+        delay_ms(100);
         REG_PORT_OUT1 |= (1<<30);
-        delay(100);
+        delay_ms(100);
 	REG_PORT_OUT1 &= ~(1<<30);
-        delay(100);
+        delay_ms(100);
         REG_PORT_OUT1 |= (1<<30);
-        delay(1000);
+        delay_ms(1000);
 
     }
 }
