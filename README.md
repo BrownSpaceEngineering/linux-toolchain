@@ -9,7 +9,7 @@
 6. Probably reboot. Just running `sudo udevadm control --reload` might also work.
 
 # Installing the Toolchain
-- Download the ARM GNU Toolchain from [here](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers) and puth the bin folder on your path.
+- Download the ARM GNU Toolchain from [here](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers) and put the bin folder on your path.
 
 # Building and Deploying ASF4 (Atmel START)
 1. From within this directory, start `openocd`
