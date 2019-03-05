@@ -9,14 +9,16 @@
 6. Probably reboot. Just running `sudo udevadm control --reload` might also work.
 
 # Installing the Toolchain
-- Download the ARM GNU Toolchain from [here](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers) and put the bin folder on your path.
+- Download the ARM GNU Toolchain from [here](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers), choosing "ARM 8-bit Toolchain X.X.X" for your OS under the "ARM GNU Toolchain (32-bit)" header (counterintuitively).
+- Add the `arm-none-eabi/bin/` folder to your path (e.g. in `~/.bashrc`). 
 
 # Building and Deploying ASF4 (Atmel START)
-1. From within this directory, start `openocd`
-2. In a new terminal, cd into `BlinkyBlinkyASF4/gcc/`
-3. Run `make`
-4. Run `arm-none-eabi-gdb -iex "target extended-remote localhost:3333" AtmelStart.elf`
-5. At the `(gdb)` prompt run `load` to upload to the micro, `monitor reset halt` to reset the micro, and `c` to 'continue'.
+1. Plug in your SAM D21 Xplained Pro
+2. From within this directory, start `openocd`
+3. In a new terminal, cd into `BlinkyBlinkyASF4/gcc/`
+4. Run `make`
+5. Run `arm-none-eabi-gdb -iex "target extended-remote localhost:3333" AtmelStart.elf`
+6. At the `(gdb)` prompt run `load` to upload to the micro, `monitor reset halt` to reset the micro, and `c` to 'continue'.
 
 # Building and Deploying Old ASF3
 1. Download ASF 3 from [here](https://www.microchip.com/mplab/avr-support/advanced-software-framework)(bottom of the page, ignore that it says Windows) and export a environment variable `ASF_ROOT` with the path to that (e.g. `export ASF_ROOT=~/Programs/xdk-asf-3.44.0/`)
