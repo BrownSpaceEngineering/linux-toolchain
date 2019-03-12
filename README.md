@@ -10,7 +10,7 @@
 
 # Installing the Toolchain
 - Download the ARM GNU Toolchain from [here](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers), choosing "ARM 8-bit Toolchain X.X.X" for your OS under the "ARM GNU Toolchain (32-bit)" header (counterintuitively).
-- Add the `arm-none-eabi/bin/` folder to your path (e.g. in `~/.bashrc`). 
+- Add the `arm-none-eabi/bin/` folder (the one containing executables prefixed with `arm-none-eabi`) to your path (e.g. in `~/.bashrc`). 
 
 # Building and Deploying ASF4 (Atmel START)
 1. Plug in your SAM D21 Xplained Pro
