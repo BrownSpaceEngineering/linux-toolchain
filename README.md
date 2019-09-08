@@ -10,7 +10,13 @@
 
 ## Mac OSX
 1. Install homebrew [here](https://brew.sh/)
-2. Install ARM developer tools: `brew cask install gcc-arm-embedded`
+2. Install ARM developer tools: 
+```
+brew tap PX4/homebrew-px4
+brew update
+brew search px4
+brew install gcc-arm-none-eabi-80
+```
 3. Install openOCD: `brew install openocd`
 
 # Installing the Toolchain
