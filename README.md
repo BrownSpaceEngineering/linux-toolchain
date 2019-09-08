@@ -7,6 +7,7 @@
 4. Move the rules: `sudo mv ~/Downloads/60-openocd.rules /etc/udev/rules.d/`
 5. Add yourself to the plugdev group: `sudo usermod -a -G plugdev $USERNAME`
 6. Probably reboot. Just running `sudo udevadm control --reload` might also work.
+7. Install the toolchain; Download the ARM GNU Toolchain from [here](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers) and put the bin folder on your path.
 
 ## Mac OSX
 1. Install homebrew [here](https://brew.sh/)
@@ -19,11 +20,8 @@ brew install gcc-arm-none-eabi-80
 ```
 3. Install openOCD: `brew install openocd`
 
-# Installing the Toolchain
-- Download the ARM GNU Toolchain from [here](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers) and put the bin folder on your path.
-
 # Building and Deploying ASF4 (Atmel START)
-1. From within this directory, start `openocd`
+1. From within this project directory, start `openocd`
 2. In a new terminal, cd into `BlinkyBlinkyASF4/gcc/`
 3. Run `make`
 4. Run `arm-none-eabi-gdb -iex "target extended-remote localhost:3333" AtmelStart.elf`
